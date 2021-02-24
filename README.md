@@ -11,6 +11,14 @@ MinDrug is based on python 3.6 and upper
 - Sklearn
 - Math
 - Os
-- 
+ 
 **Note:**
-Make sure that these libraries are installed.
+Please make sure that these libraries are installed.
+### Run 
+At the first, Run `Sub_drug.py` as follows:
+```
+python ./Code/Sub_drug.py Train_path=./Sample_Data/Train.csv Theta=0.67 out_dir=Results
+```
+
+Users have two options to run MinDrug. 
+
