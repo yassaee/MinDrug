@@ -9,6 +9,7 @@ import pandas as pd
 import numpy as np
 import math
 import os
+import pickle
 from numpy import linalg as LA
 def Sub_drug(IC50_T1,drug,Theta):
     Sim_IC50=[[0 for i in range(len(drug))]for j in range(len(drug))]
@@ -54,12 +55,16 @@ def Sub_drug(IC50_T1,drug,Theta):
     drug1=[drug[i] for i in select_index]
     print( '***',drug1,'***')
     return select_index,drug1
-def run(Train_dir,Theta,out_sub):
+def run(Train_dir,Theta,out_sub,out_pickle):
     df_tr = pd.read_csv(Train_dir,index_col =0)
     drug=df_tr.columns
     IC50 =np.matrix(df_tr)
     IC50_T1=np.transpose(IC50)
     select_index,drug1=Sub_drug(IC50_T1, drug,Theta)
+    outfile_pickle = open(out_pickle,'wb')
+    pickle.dump(IC50,outfile_pickle)
+    pickle.dump(select_index, outfile_pickle)
+    outfile_pickle.close()
     columns_sub=['Index']
     sub_DataFrame=pd.DataFrame(select_index,index=drug1,columns=columns_sub)
     sub_DataFrame.to_csv(out_sub) 
@@ -75,6 +80,7 @@ def main():
     if not os.path.exists(out_dir):
         os.makedirs(out_dir)
     out_sub="{:s}/Sub_drug.csv".format(out_dir)
-    run(Train_dir,Theta,out_sub)
+    out_pickle="{:s}/Sub_drug.pickle".format(out_dir)
+    run(Train_dir,Theta,out_sub,out_pickle)
 #######
 main()
