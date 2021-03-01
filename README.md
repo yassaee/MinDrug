@@ -30,6 +30,17 @@ At the first, Run `Sub_drug.py` as follows:
 ```
 python ./Code/Sub_drug.py Train_path=./Sample_Data/Train.csv Theta=0.67 out_dir=Results
 ```
-Users have two options to run MinDrug. If the IC50 of drugs in Sub_drug are available for cell-lines in Test file, run `Main_MinDrug.py`. Else, run `Sim_MinDrug.py`.
+Users have two options to run MinDrug. If the IC50 of drugs in Sub_drug are available for cell-lines in Test file in Test file, run `Main_MinDrug.py`. Else, run `Sim_MinDrug.py`.
 #### Main_MinDrug
+- `Test_path`: contains a matrix where rows are cell lines and columns are drugs.
+- `Pickle_path`: is a pickle file that get from `Sub_drug.py`. 
+- `out_dir`: demonstrates output folder such that the output files save there.
+
+**Output files**
+- `{:out_dir}/Predict.csv`: This file is the predicted IC50 values for all drugs in each cell-lines in Test file. 
+
+**Command**
+```
+python ./Code/Main_MinDrug.py Test_path=./Sample_Data/Test.csv Pickle_path=./Results/Sub_drug.pickle out_dir=Results
+```
 #### Sim_MinDrug
