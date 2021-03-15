@@ -44,3 +44,15 @@ Users have two options to run MinDrug. If the IC50 of drugs in Sub_drug are avai
 python ./Code/Main_MinDrug.py Test_path=./Sample_Data/Test.csv Pickle_path=./Results/Sub_drug.pickle out_dir=Results
 ```
 #### Sim_MinDrug
+- `Test_path`: contains a matrix where rows are cell lines and columns are drugs.
+- `Pickle_path`: is a pickle file that get from `Sub_drug.py`. 
+- - `SimCell_path`: contains the similarity matrix between cell-lines.
+- `out_dir`: demonstrates output folder such that the output files save there.
+
+**Output files**
+- `{:out_dir}/Predict.csv`: This file is the predicted IC50 values for all drugs in each cell-lines in Test file. 
+
+**Command**
+```
+python ./Code/Sim_MinDrug.py Test_path=./Sample_Data/Test.csv Pickle_path=./Results/Sub_drug.pickle out_dir=Results
+```
