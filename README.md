@@ -54,5 +54,5 @@ python ./Code/Main_MinDrug.py Test_path=./Sample_Data/Test.csv Pickle_path=./Res
 
 **Command**
 ```
-python ./Code/Sim_MinDrug.py Test_path=./Sample_Data/Test.csv Pickle_path=./Results/Sub_drug.pickle out_dir=Results
+python ./Code/Sim_MinDrug.py Test_path=./Sample_Data/Test.csv Pickle_path=./Results/Sub_drug.pickle Test_path=./Sample_Data/Sim_Cell_line.csv out_dir=Results
 ```
