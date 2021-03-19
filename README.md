@@ -38,7 +38,7 @@ Users have two options to run MinDrug. If the IC50 of drugs in Sub_drug are avai
 - `out_dir`: demonstrates output folder such that the output files save there.
 
 **Output files**
-- `{:out_dir}/Predict.csv`: This file is the predicted IC50 values for all drugs in each cell-lines in Test file. 
+- `{:out_dir}/Predict_Main.csv`: This file is the predicted IC50 values for all drugs in each cell-lines in Test file. 
 
 **Command**
 ```
@@ -51,7 +51,7 @@ python ./Code/Main_MinDrug.py Test_path=./Sample_Data/Test.csv Pickle_path=./Res
 - `out_dir`: demonstrates output folder such that the output files save there.
 
 **Output files**
-- `{:out_dir}/Predict.csv`: This file is the predicted IC50 values for all drugs in each cell-lines in Test file. 
+- `{:out_dir}/Predict_Sim.csv`: This file is the predicted IC50 values for all drugs in each cell-lines in Test file. 
 
 **Command**
 ```
