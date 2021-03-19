@@ -11,6 +11,7 @@ MinDrug is based on python 3.6 and upper
 - Sklearn
 - Math
 - Os
+- Pickle
  
 **Note:**
 Please make sure that these libraries are installed.
