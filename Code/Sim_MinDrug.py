@@ -75,7 +75,7 @@ def main():
     out_dir=args.out_dir.split('=')[1]
     if not os.path.exists(out_dir):
         os.makedirs(out_dir)
-    out_file="{:s}/Predict.csv".format(out_dir)
+    out_file="{:s}/Predict_Sim.csv".format(out_dir)
     run(Test_dir,cell_dir,out_file,pickle_file)
 #######
 main()
