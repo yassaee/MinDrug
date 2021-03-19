@@ -58,16 +58,19 @@ def Sub_drug(IC50_T1,drug,Theta):
 def run(Train_dir,Theta,out_sub,out_pickle):
     df_tr = pd.read_csv(Train_dir,index_col =0)
     drug=df_tr.columns
+    cell_train=list(df_tr.index)
     IC50 =np.matrix(df_tr)
     IC50_T1=np.transpose(IC50)
     select_index,drug1=Sub_drug(IC50_T1, drug,Theta)
     outfile_pickle = open(out_pickle,'wb')
     pickle.dump(IC50,outfile_pickle)
+    pickle.dump(cell_train,outfile_pickle)
+    pickle.dump(drug,outfile_pickle)
     pickle.dump(select_index, outfile_pickle)
     outfile_pickle.close()
     columns_sub=['Index']
     sub_DataFrame=pd.DataFrame(select_index,index=drug1,columns=columns_sub)
-    sub_DataFrame.to_csv(out_sub) 
+    sub_DataFrame.to_csv(out_sub)
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("Train_path_file")
