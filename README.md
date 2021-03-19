@@ -47,7 +47,7 @@ python ./Code/Main_MinDrug.py Test_path=./Sample_Data/Test.csv Pickle_path=./Res
 #### Sim_MinDrug
 - `Test_path`: contains a matrix where rows are cell lines and columns are drugs.
 - `Pickle_path`: is a pickle file that get from `Sub_drug.py`. 
-- - `SimCell_path`: contains the similarity matrix between cell-lines.
+- `SimCell_path`: contains the similarity matrix between cell-lines.
 - `out_dir`: demonstrates output folder such that the output files save there.
 
 **Output files**
